@@ -7,7 +7,7 @@ param
     [string]$callBackUri
 
 )
- 
+
 Try {
 
 
