@@ -8,7 +8,7 @@ write-output "Importing Paylocity module..."
 Import-Module Paylocity
 write-output "Importing VantagePoint module..."
 Import-Module VantagePoint
-
+ 
 
 
 #Retrieve VantagePoint credentials
