@@ -8,7 +8,7 @@ param
     [Parameter(Mandatory=$false)]
     [int]$Test
 ) 
-
+ 
 Try {
  
     write-output "start"
@@ -33,7 +33,7 @@ Catch {
 
     Setup
 
-##########################################################################>
+##########################################################################
 
 #$test = 1
 
@@ -119,7 +119,7 @@ write-output "Paylocity token: $paylocityToken"
 
     Get info from Paylocity
 
-########################################################################################>
+########################################################################################
 
 #Fetch record from Paylocity
 Write-Output "Getting Paylocity record..."
@@ -132,7 +132,7 @@ $PaylocityEmployee
 
 Create an employee object for Vision from the Paylocity info
 
-#########################################################################################>
+#########################################################################################
 
 
 $NewVisionEmployee = Get-NewVisionFromPaylocity -PaylocityEmployee $PaylocityEmployee
@@ -151,7 +151,7 @@ $NewVisionEmployee
 
 Load Vision record if it exists (checking for PaylocityID and then email)
 
-#########################################################################################>
+#########################################################################################
 
 write-output "Getting any existing Vision record"
 $VisionEmployee = Get-VisionEmployee -PaylocityID $PaylocityID
@@ -190,7 +190,7 @@ $VisionEmployee
 
 Compare New Vision Object. If there is no current vision employee, create a blank object for comparison with Vision object. 
 
-#########################################################################################>
+#########################################################################################
 
 $ResultsHTML = ""
 $ResultsHTML = Compare-PaylocityVision -VisionEmployee $VisionEmployee -NewVisionEmployee $NewVisionEmployee
@@ -201,7 +201,7 @@ write-output "Comparison results obtained."
 
 ERROR CHECKING SECTION 
 
-#########################################################################################> 
+#########################################################################################
 
         $StatusMessage = ""        #This will be prepended to the email later
         $UpdateFlag = $true        #THis will be used to skip trying to update Vision.
@@ -258,7 +258,7 @@ Write-output "Now on to updating Vision..."
 
 Send any changes/additions to Vision. Only notification if no changes.
 
-#########################################################################################>
+#########################################################################################
 
 #Check if there are any updates to perform
 $Changes = Compare-PaylocityVisionUpdateFlag -VisionEmployee $VisionEmployee -NewVisionEmployee $NewVisionEmployee
