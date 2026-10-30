@@ -20,7 +20,7 @@ $Global:ClientSecret = Get-AzKeyVaultSecret -VaultName $vaultName -Name "Vantage
 
 #Set VantagePoint server and database for token retrieval
 $BaseURL = "https://mps.dvphosted.com/mps/api"
-$database = "MPSVP_Preview"
+$database = "MPSvp"
 
 #Get VantagePoint token
 $Params = @{
